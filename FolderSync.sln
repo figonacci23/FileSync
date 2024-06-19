@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FolderSync", "FolderSync\FolderSync.csproj", "{DA91EDDA-1DED-499F-ABF9-88D7995D0702}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA91EDDA-1DED-499F-ABF9-88D7995D0702}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DA91EDDA-1DED-499F-ABF9-88D7995D0702}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{DA91EDDA-1DED-499F-ABF9-88D7995D0702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA91EDDA-1DED-499F-ABF9-88D7995D0702}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9219F64-CD7F-497C-B56B-3B7E806B42F8}
+	EndGlobalSection
+EndGlobal
