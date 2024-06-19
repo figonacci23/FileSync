@@ -12,3 +12,4 @@ C:\Users\goncalo.figueiredo\source\repos\FolderSync\FolderSync\obj\Release\net8.
 C:\Users\goncalo.figueiredo\source\repos\FolderSync\FolderSync\obj\Release\net8.0\FolderSync.pdb
 C:\Users\goncalo.figueiredo\source\repos\FolderSync\FolderSync\obj\Release\net8.0\FolderSync.genruntimeconfig.cache
 C:\Users\goncalo.figueiredo\source\repos\FolderSync\FolderSync\obj\Release\net8.0\ref\FolderSync.dll
+C:\Users\goncalo.figueiredo\source\repos\FolderSync\FolderSync\obj\Release\net8.0\FolderSync.sourcelink.json

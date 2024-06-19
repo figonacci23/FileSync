@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FolderSync")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96805d0afdfa694f40dd566eb91afa297cab896b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d97420fa1b41c83190400760751db3f4be940cf8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FolderSync")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FolderSync")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

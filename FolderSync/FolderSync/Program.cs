@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Threading;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 class Program
 {
@@ -10,7 +9,7 @@ class Program
     {
         if (args.Length != 4)
         {
-            Console.WriteLine("Usage: FolderSync.exe <source> <target> <logfile> <time in minutes>");
+            Console.WriteLine("Format: FolderSync.exe [source] [target] [logfile] [time in minutes]");
             return;
         }
 
@@ -31,6 +30,7 @@ class Program
             }
 
             Thread.Sleep(1000 * 60 * period);
+            Console.WriteLine(DateTime.Now.AddMinutes(period).ToString());
         }
     }
 
@@ -41,52 +41,52 @@ class Program
 
         if (!sourceInfo.Exists)
         {
-            throw new DirectoryNotFoundException($"Source directory not found: {sourceInfo.FullName}");
+            throw new DirectoryNotFoundException($"Source Not Found: {sourceInfo.FullName}");
         }
 
         if (!targetInfo.Exists)
         {
             targetInfo.Create();
-            Log($"Created destination directory: {targetInfo.FullName}", logfile);
+            Log($"Created Target Dir: {targetInfo.FullName}", logfile);
         }
 
-        // Copy all files from source to destination
+        // Copy Files
         foreach (FileInfo sourceFile in sourceInfo.GetFiles())
         {
             string destFilePath = Path.Combine(destDir, sourceFile.Name);
             if (!File.Exists(destFilePath) || sourceFile.LastWriteTime > File.GetLastWriteTime(destFilePath))
             {
                 sourceFile.CopyTo(destFilePath, true);
-                Log($"Copied/Updated file: {sourceFile.FullName} to {destFilePath}", logfile);
+                Log($"Copied/Updated File: {sourceFile.FullName} to {destFilePath}", logfile);
             }
         }
 
-        // Recursively sync subdirectories
+        // Recursive Sync
         foreach (DirectoryInfo sourceSubDir in sourceInfo.GetDirectories())
         {
             string destSubDirPath = Path.Combine(destDir, sourceSubDir.Name);
             SyncDirectories(sourceSubDir.FullName, destSubDirPath, logfile);
         }
 
-        // Remove files from destination that do not exist in source
+        // Remove Non Existent Files
         foreach (FileInfo destFile in targetInfo.GetFiles())
         {
             string sourceFilePath = Path.Combine(sourceDir, destFile.Name);
             if (!File.Exists(sourceFilePath))
             {
                 destFile.Delete();
-                Log($"Deleted file: {destFile.FullName}", logfile);
+                Log($"Deleted File: {destFile.FullName}", logfile);
             }
         }
 
-        // Remove subdirectories from destination that do not exist in source
+        // Remove Non Existent SubDirs
         foreach (DirectoryInfo destSubDir in targetInfo.GetDirectories())
         {
             string sourceSubDirPath = Path.Combine(sourceDir, destSubDir.Name);
             if (!Directory.Exists(sourceSubDirPath))
             {
                 destSubDir.Delete(true);
-                Log($"Deleted directory: {destSubDir.FullName}", logfile);
+                Log($"Deleted Dir: {destSubDir.FullName}", logfile);
             }
         }
     }
